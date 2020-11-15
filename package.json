@@ -1,0 +1,27 @@
+{
+  "name": "algo-visualizer",
+  "version": "1.0.0",
+  "description": "It is an application to visualize the alogoritms",
+  "main": "index.js",
+  "dependencies": {
+    "@types/d3": "^5.7.2",
+    "d3": "^6.1.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NirakhRastogi/Algo-Visualizer.git"
+  },
+  "author": "Nirakh Rastogi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NirakhRastogi/Algo-Visualizer/issues"
+  },
+  "homepage": "https://github.com/NirakhRastogi/Algo-Visualizer#readme"
+}
