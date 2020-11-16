@@ -42,7 +42,7 @@ async function insertionSort() {
         return;
       }
     }
-    isSorted = true;
+    if (direction == 1) isSorted = true;
     return;
   } catch (e) {
     await this.updateBoardColor(["white", "white"], 250, [cr, nr], [cc, nc]);

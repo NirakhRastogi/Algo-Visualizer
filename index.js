@@ -23,6 +23,18 @@ var colors = {
 };
 
 var container = d3.select("#board").append("g");
+var grid_container_x = d3
+  .select("#grid")
+  .append("g")
+  .attr("id", function (i, v) {
+    return "Grid_X_G";
+  });
+var grid_container_y = d3
+  .select("#grid")
+  .append("g")
+  .attr("id", function (i, v) {
+    return "Grid_Y_G";
+  });
 var isSorted = false;
 var values = [];
 
@@ -37,6 +49,81 @@ var svgProperty = {
 
 var stopProgress = false;
 var pauseProgress = false;
+
+(() => {
+  let width = window.outerWidth;
+  let height = window.outerHeight;
+  let gridSize = [svgProperty.box.width, svgProperty.box.height];
+  let x = [];
+  let y = [];
+
+  for (let i = -gridSize[0] * 2; i < width; i += gridSize[0]) {
+    y.push(i);
+  }
+  for (let i = -gridSize[1] * 2; i < height; i += gridSize[1]) {
+    x.push(i);
+  }
+
+  var gridRow = grid_container_x.selectAll("#Grid_X_G").data(x, function (v) {
+    return v;
+  });
+
+  var gridRowEntry = gridRow
+    .enter()
+    .append("g")
+    .attr("id", function (v, i) {
+      return "Grid_Row_" + i;
+    });
+
+  gridRowEntry
+    .append("line")
+    .attr("id", function (v) {
+      return "Line_X_" + v;
+    })
+    .attr("x1", function (v) {
+      return 0;
+    })
+    .attr("x2", function (v) {
+      return width;
+    })
+    .attr("y1", function (v) {
+      return v;
+    })
+    .attr("y2", function (v) {
+      return v;
+    })
+    .attr("stroke", "black");
+
+  var gridCol = grid_container_y.selectAll("#Grid_Y_G").data(y, function (v) {
+    return v + "_y";
+  });
+
+  var gridColEntry = gridCol
+    .enter()
+    .append("g")
+    .attr("id", function (v, i) {
+      return "Grid_Col_" + i;
+    });
+
+  gridColEntry
+    .append("line")
+    .attr("id", function (v) {
+      return "Line_Y_" + v;
+    })
+    .attr("x1", function (v) {
+      return v;
+    })
+    .attr("x2", function (v) {
+      return v;
+    })
+    .attr("y1", function (v) {
+      return 0;
+    })
+    .attr("y2", function (v) {
+      return height;
+    })
+    .attr("stroke", "black");
+})();
 
 function getSortDirection() {
   if (selectValue.endsWith("search")) {
@@ -82,6 +169,7 @@ submitBtn.addEventListener("click", function () {
 
 startBtn.addEventListener("click", async () => {
   if (!pauseProgress) {
+    clearLog();
     hideElements(fgStartEl, fgSubmitEl, fgValueEl, fgAlgoEl);
     showElements(fgPauseEl, fgStopEl);
     stopProgress = false;

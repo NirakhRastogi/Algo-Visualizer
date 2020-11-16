@@ -50,13 +50,17 @@ async function selectionSort() {
         drawBoard(false);
         await timer(250);
       }
-      await this.updateBoardColor(["white"], 250, [mr], [mc]);
-      await this.updateBoardColor(["white"], 250, [mr], [mc]);
+      await this.updateBoardColor(
+        ["white", "white", "white"],
+        250,
+        [cr, nr, mr],
+        [cc, nc, mc]
+      );
       if (stopProgress) {
         return;
       }
     }
-    isSorted = true;
+    if (direction == 1) isSorted = true;
   } catch (e) {
     await this.updateBoardColor(
       ["white", "white", "white"],

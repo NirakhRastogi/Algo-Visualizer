@@ -13,6 +13,7 @@ function updateBox() {
 }
 
 function updateError(_error) {
+  console.log(_error.logs);
   document.getElementById("message").innerText = _error.message;
   document.getElementById("logs").innerText = _error.logs;
   if (!showBox) {

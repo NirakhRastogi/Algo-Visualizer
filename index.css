@@ -1,161 +1,184 @@
 html,
-body{
-    margin: 0px;
-    padding: 0px;
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
-    font-family: "Baloo 2", cursive;
-    display: inline-block;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(230, 199, 117);
+  width: 100vw;
+  height: 100vh;
+  font-family: "Baloo 2", cursive;
+  display: inline-block;
 }
 
-.cover{
-    width: 100vw;
-    height: 100vh;
-    display: inline-block;
+.cover {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
 }
 
-#body{
-    margin-top: 60px;
-    height: 100vh;
-
-    background-color: rgb(230, 230, 230);
-    padding: 10px;
+#body {
+  margin-top: 52px;
+  height: 100vh;
 }
 
-#headers{
-    width: 100vw;
-    position: fixed;
-    height: auto;
-    min-width: 50px;
-    background-color: white;
-    align-items: flex-start;
-    padding-top: 5px;
-    display: inline-flex;
-    box-shadow: 2px 4px 4px lightgray;
-    transition: all 200ms ease-in-out;
+#headers {
+  z-index: 100;
+  width: 100vw;
+  position: fixed;
+  height: auto;
+  min-height: 45px;
+  min-width: 50px;
+  background-color: white;
+  align-items: flex-start;
+  display: inline-flex;
+  transition: all 200ms ease-in-out;
 }
 
-.form-group{
-    width: auto;
-    height: 100%;
-    padding-left: 15px;
-    margin-top: 5px;
+.form-group {
+  width: auto;
+  height: 100%;
+  padding-left: 15px;
+  margin-top: 5px;
 }
 
-.form-group>label{
-    width: auto;
-    vertical-align: top;
-    font-size: 18px;
-    text-transform: uppercase;
+.form-group > label {
+  width: auto;
+  height: auto;
+  vertical-align: top;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
-.textbox{
-    margin-left: 10px;
-    width: 200px;
-    height: 35px;
-    font-size: 18px;
-    border: 1px solid lightgray;
-    outline: none;
-    text-align: center;
+.textbox {
+  margin-left: 10px;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  outline: none;
+  text-align: center;
 }
 
-.multitext{
-    margin-left: 10px;
-    width: 300px;
-    height: 25px;
-    font-size: 18px;
-    border: 1px solid lightgray;
-    outline: none;
-    padding: 5px;
-    transition: all 200ms ease-in-out;
+.multitext {
+  margin-left: 10px;
+  width: 300px;
+  height: 25px;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  outline: none;
+  padding: 5px;
+  transition: all 200ms ease-in-out;
 }
 
 .multitext:hover {
-    height: 250px;
+  height: 250px;
 }
 
-.multitext:focus{
-    height: 250px;
+.multitext:focus {
+  height: 250px;
 }
 
-.selectbox{
-    margin-left: 10px;
-    width: 200px;
-    height: 35px;
-    font-size: 18px;
-    border: 1px solid lightgray;
-    outline: none;
-    text-align: center;
+.selectbox {
+  margin-left: 10px;
+  width: 200px;
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  outline: none;
+  text-align: center;
 }
 
-.button{
-    width: 150px;
-    height: 35px;
-    border: none;
-    text-transform: uppercase;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 2px 4px 4px lightgray;
-    outline: none;
+.button {
+  width: 150px;
+  height: 35px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 2px 4px 4px lightgray;
+  outline: none;
 }
 
-.button:hover{
-    cursor: pointer;
+.button:hover {
+  cursor: pointer;
 }
 
-.red{
-    background-color: rgb(189, 71, 71);
-    transition: background-color 200ms ease-in-out;
+.red {
+  background-color: rgb(189, 71, 71);
+  transition: background-color 200ms ease-in-out;
 }
 
-.red:hover{
-    background-color: rgb(221, 129, 129);
+.red:hover {
+  background-color: rgb(221, 129, 129);
 }
 
-.blue{
-    background-color: rgb(71, 93, 189);
-    transition: background-color 200ms ease-in-out;
+.blue {
+  background-color: rgb(71, 93, 189);
+  transition: background-color 200ms ease-in-out;
 }
 
-.blue:hover{
-    background-color: rgb(129, 172, 221);
+.blue:hover {
+  background-color: rgb(129, 172, 221);
 }
 
-.green{
-    background-color: rgb(71, 189, 87);
-    transition: background-color 200ms ease-in-out;
+.dark-blue {
+  background-color: rgb(21, 37, 109);
+  transition: background-color 200ms ease-in-out;
 }
 
-.green:hover{
-    background-color: rgb(129, 229, 137);
+.dark-blue:hover {
+  background-color: rgb(26, 65, 110);
 }
 
-.hide{
-    display: none;
+.green {
+  background-color: rgb(71, 189, 87);
+  transition: background-color 200ms ease-in-out;
 }
 
-.show{
-    display: block;
+.green:hover {
+  background-color: rgb(129, 229, 137);
 }
 
-.box{
-    position: fixed;
-    width: 400px;
-    height: 100vh;
-    right: 0px;
-    padding: 10px;
-    color: black;
-    top : 55px;
-    opacity: 1;
-    border: 1px solid black;
-    transition: width 200ms ease-in-out;
+.black {
+  background-color: rgb(0, 0, 0);
+  transition: background-color 200ms ease-in-out;
 }
 
-.compress{
-    width: 0px;
+.black:hover {
+  background-color: rgb(31, 31, 31);
 }
 
-.expand{
-    width: 400px;
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.box {
+  position: fixed;
+  width: 400px;
+  height: 92vh;
+  right: 0px;
+  padding: 10px;
+  color: black;
+  top: 52px;
+  opacity: 1;
+  overflow: auto;
+  transition: width 200ms ease-in-out;
+}
+
+.compress {
+  width: 0px;
+}
+
+.expand {
+  width: 400px;
+}
+
+.nunito_log_font {
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
 }
