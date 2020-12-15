@@ -9,7 +9,7 @@ async function bubbleSort() {
     addLog(`Looping from i = 0 to ${row * col} elements...`);
     for (var i = 0; i < row * col; ++i) {
       stepCounter(1);
-      addLog(`Looping from j = 0 to ${row * col - 1} elements, i = ${i}...`);
+      addLog(`Looping from j = 0 to ${row * col - 1} elements, At i = ${i}...`);
       for (var j = 0; j < row * col - 1; ++j) {
         stepCounter(1);
         addLog(`At j = ${j}`);
@@ -26,7 +26,8 @@ async function bubbleSort() {
         );
 
         addLog(
-          `Comparing ${this.values[cr][cc][2]} at index [${cr},${cc}] with ${this.values[nr][nc][2]} at index [${nr},${nc}]...`
+          `Comparing ${this.values[cr][cc][2]} at index [${cr},${cc}] with ${this.values[nr][nc][2]} at index [${nr},${nc}]...`,
+          "pink"
         );
         if (
           Math.sign(
