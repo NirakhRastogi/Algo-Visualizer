@@ -28,7 +28,7 @@ function expandElements(...els) {
 
 function compressElements(...els) {
   for (var el of els) {
-    __compressElements(el);
+    __compressElement(el);
   }
 }
 
