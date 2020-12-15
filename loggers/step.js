@@ -1,3 +1,6 @@
+var stepEl = document.getElementById("btn_step");
+var stepsLogDiv = document.getElementById("steps_log_div");
+var showStep = true;
 var stepLogs = [];
 var stepLogLength = 1;
 var stepCount = 0;
@@ -31,6 +34,14 @@ function clearLog() {
   actualComplexity = [];
 }
 
+stepEl.addEventListener("click", toggleStepBox);
+
+function toggleStepBox() {
+  showStep = !showStep;
+  if (showStep) expandElements(stepsLogDiv);
+  else compressElements(stepsLogDiv);
+}
+
 function finishLog() {
   addLog("____________________________________________________________");
   addLog(`Time Complexity`, "red", "17px");
@@ -52,7 +63,7 @@ function finishLog() {
 
 function addLog(log = ``, color = "white", font_size = "inherit") {
   stepLogs.push(
-    `<tr><td style="color: ${color}; font-size: ${font_size}">${stepLogLength++}... ${log}</td></tr>`
+    `<tr><td style="color: ${color}; font-size: ${font_size}"><label style="color:white">${stepLogLength++}...</label> ${log}</td></tr>`
   );
   document.getElementById("steps_table").innerHTML = stepLogs.join("");
 }
