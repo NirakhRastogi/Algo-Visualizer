@@ -20,6 +20,7 @@ var colors = {
   element1Color: "rgb(196, 74, 26)",
   element2Color: "rgb(26, 128, 196)",
   element3Color: "rgb(89, 227, 102)",
+  backgroundColor: "rgb(230,200,200)",
 };
 
 var container = d3.select("#board").append("g");
@@ -190,6 +191,9 @@ startBtn.addEventListener("click", async () => {
       case "selection-sort":
         await selectionSort();
         break;
+      case "quick-sort":
+        await quickSort();
+        break;
     }
     hideElements(fgPauseEl, fgStopEl);
     showElements(fgStartEl, fgSubmitEl, fgAlgoEl, fgValueEl);
@@ -342,6 +346,16 @@ function updateBoard() {
           return v[3];
         });
     }
+  }
+}
+
+async function updateRowColor(start, end, color, time) {
+  for (let i = start; i <= end; i++) {
+    await checkPause();
+    if (stopProgress) {
+      return;
+    }
+    await this.updateBoardColor([color], time, [0], [i]);
   }
 }
 
